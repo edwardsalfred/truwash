@@ -256,21 +256,9 @@ p{margin:0 0 1em}
   overflow:hidden;
   padding:120px 28px 80px;
 }
-.hero-canvas{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-  background-color:var(--bayou-deep);
-  /* poster shown until canvas is ready (or always, on mobile / reduced motion) */
-  background-image:var(--hero-poster, none);
-  background-size:cover;
-  background-position:center;
-}
-/* HTML5 video for mobile (and iOS Safari, where canvas-driven scroll is disabled).
-   Hidden on desktop. Shown at the same position as the canvas. */
+/* Layered background: video plays underneath as instant-on fallback,
+   canvas overlays once frames are loaded and fades in. Once canvas is
+   visible the JS pauses the video to save battery. */
 .hero-video{
   position:absolute;
   inset:0;
@@ -278,9 +266,25 @@ p{margin:0 0 1em}
   height:100%;
   object-fit:cover;
   z-index:0;
-  display:none;
   background:var(--bayou-deep);
+  transition:opacity .6s ease;
 }
+.hero-video.is-hidden{opacity:0;pointer-events:none}
+.hero-canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
+  background-color:var(--bayou-deep);
+  background-image:var(--hero-poster, none);
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity .6s ease;
+}
+.hero-canvas.is-ready{opacity:1}
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -1045,17 +1049,25 @@ section .container{max-width:var(--max);margin:0 auto}
    static poster image (set on .hero-canvas background). The
    JS skips frame loading too.
    =================================================== */
-@media (max-width:720px), (prefers-reduced-motion:reduce){
-  .hero-scroll{height:auto;min-height:100vh}
-  .hero{position:relative;height:auto;min-height:100vh}
+/* Mobile: keep the scroll-driven canvas, but shorten the runway so users
+   aren't stuck scrolling forever on a small screen, and lighten the overlay. */
+@media (max-width:720px){
+  .hero-scroll{height:175vh}
+  .hero{height:100vh;height:100dvh}
   .hero-overlay{
     background:
       linear-gradient(180deg, rgba(11,42,58,.65) 0%, rgba(11,42,58,.3) 35%, rgba(11,42,58,.25) 65%, rgba(6,32,44,.92) 100%);
   }
-  .hero-scroll-hint{display:none}
-  /* Show the video, hide the canvas on mobile + reduced motion */
+  .hero-scroll-hint{font-size:.66rem;padding:8px 14px;margin-top:20px}
+}
+
+/* Reduced motion: completely disable scroll-driven hero, show just the video.
+   Honors accessibility preferences over animation effects. */
+@media (prefers-reduced-motion:reduce){
+  .hero-scroll{height:auto;min-height:100vh}
+  .hero{position:relative;height:auto;min-height:100vh}
   .hero-canvas{display:none}
-  .hero-video{display:block}
+  .hero-scroll-hint{display:none}
 }
 
 @media (max-width:720px){
