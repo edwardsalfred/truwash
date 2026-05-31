@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tru Wash | Competitive Analysis | Houma Detail, Lawn &amp; Pressure Wash Market</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f4f0;
+    --paper-card:#fffefa;
+    --ink:#1a1814;
+    --muted:#6e665b;
+    --terracotta:#c45d3e;
+    --bayou:#0b2a3a;
+    --grass:#5bae3e;
+    --water:#3fb7e6;
+    --hairline:rgba(26,24,20,.12);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    font-size:15px;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    opacity:.5;
+    z-index:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:64px 40px 96px;position:relative;z-index:1}
+  h1,h2,h3{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
+  h1{font-size:54px;margin:.2em 0 .3em}
+  h2{font-size:34px;margin:2.4em 0 .6em}
+  h3{font-size:22px;margin:1.8em 0 .4em}
+  .eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta)}
+  .lede{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.4;color:#3a342c;margin:0 0 .6em;font-style:italic}
+  .meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--muted);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:14px 0;margin:24px 0 36px}
+  .meta b{color:var(--ink);font-weight:600}
+  .badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);border:1px solid var(--terracotta);padding:6px 12px;border-radius:999px}
+
+  /* Phase cards */
+  .card{
+    background:var(--paper-card);
+    border:1px solid var(--hairline);
+    border-left:4px solid var(--terracotta);
+    border-radius:8px;
+    padding:28px 30px;
+    margin:18px 0;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+    transition:box-shadow .18s ease,transform .18s ease;
+  }
+  .card:hover{box-shadow:0 6px 24px rgba(11,42,58,.06);transform:translateY(-1px)}
+  .card .phase-num{font-family:'Instrument Serif',serif;font-size:54px;color:rgba(196,93,62,.18);line-height:.9;margin-bottom:-12px}
+  .card h3{margin-top:.1em}
+  .card .url-line{margin:4px 0 14px;font-size:13px}
+  .card .url-line a{color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--terracotta);font-weight:600}
+  .swatch-row{display:flex;gap:8px;margin:10px 0 16px;flex-wrap:wrap}
+  .sw{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+  .sw-label{font-size:11px;color:var(--muted);align-self:center;margin-left:4px}
+  .tags{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+  .tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(196,93,62,.07);border:1px solid rgba(196,93,62,.18);padding:4px 10px;border-radius:999px}
+  .strength,.weakness{font-size:14px;margin:8px 0}
+  .strength b{color:var(--grass)}
+  .weakness b{color:var(--terracotta)}
+
+  /* Score grid */
+  .scoregrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+  .scoreitem{font-size:11px;color:var(--muted);background:var(--paper);border:1px solid var(--hairline);border-radius:6px;padding:6px 8px;text-align:center}
+  .scoreitem b{display:block;font-family:'Instrument Serif',serif;font-size:18px;color:var(--bayou);font-weight:400}
+
+  /* Comparison table */
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;background:var(--paper-card);border:1px solid var(--hairline);border-radius:6px;overflow:hidden}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--hairline)}
+  th{background:rgba(11,42,58,.04);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bayou)}
+  td.score{text-align:center;font-weight:600;color:var(--bayou)}
+  tr:last-child td{border-bottom:none}
+  tr.totalrow td{background:rgba(196,93,62,.06);font-weight:700}
+
+  /* Connectors */
+  .flow{position:relative;margin:8px 0;height:24px}
+  .flow svg{display:block;margin:0 auto;opacity:.4}
+
+  /* Pattern panel */
+  .pattern{
+    background:linear-gradient(180deg,var(--paper-card),rgba(196,93,62,.04));
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    padding:24px 28px;
+    margin:14px 0;
+  }
+  .pattern .n{font-family:'Instrument Serif',serif;color:var(--terracotta);font-size:32px;line-height:1;margin-right:10px}
+  .pattern h3{display:inline;font-size:20px}
+
+  /* SEO/direction blocks */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+  .twocol .col{background:var(--paper-card);border:1px solid var(--hairline);border-radius:8px;padding:18px 20px}
+  .twocol h4{font-family:'Instrument Serif',serif;font-weight:400;font-size:18px;margin:0 0 .5em;color:var(--bayou)}
+  ul.tight{margin:.4em 0;padding-left:1.2em}
+  ul.tight li{margin:.25em 0;font-size:13px;color:#3a342c}
+
+  /* Footer */
+  .footer{
+    margin-top:64px;
+    padding-top:24px;
+    border-top:1px solid var(--hairline);
+    font-size:12px;color:var(--muted);
+    text-align:center;letter-spacing:.06em
+  }
+  .footer .credit{margin-top:18px;padding-top:18px;border-top:1px solid var(--hairline);font-size:12px;letter-spacing:.08em}
+  .footer .credit a{color:var(--terracotta);font-weight:600;border-bottom:1px solid var(--terracotta);text-decoration:none}
+
+  /* Print */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    body::before{display:none}
+    .wrap{padding:0;max-width:none}
+    .card,.pattern,.twocol .col{break-inside:avoid;box-shadow:none}
+    h2{break-after:avoid}
+    a{color:var(--terracotta)!important;text-decoration:none}
+    @page{size:A4;margin:18mm 16mm}
+  }
+
+  @media (max-width:640px){
+    .wrap{padding:36px 22px 64px}
+    h1{font-size:38px}
+    h2{font-size:26px}
+    .scoregrid{grid-template-columns:repeat(2,1fr)}
+    .twocol{grid-template-columns:1fr}
+    .meta{gap:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Competitive Analysis · Confidential</span>
+  <h1>Tru Wash Detail &amp; Lawn Care</h1>
+  <p class="lede">A market read on the Houma detail, lawn, and pressure-wash landscape, and where Tru Wash can win.</p>
+
+  <div class="meta">
+    <span><b>Client</b> Tru Wash Detail and Lawn Care, LLC</span>
+    <span><b>Market</b> Houma, LA &middot; Terrebonne Parish</span>
+    <span><b>Date</b> May 31, 2026</span>
+    <span><b>Prepared by</b> Chatbot Boy AI</span>
+  </div>
+
+  <span class="badge">Executive Summary</span>
+  <p>Houma's detail, lawn, and pressure-wash markets are each served by a small handful of competent specialists, but no operator has staked a clear claim to the bundled "one trusted crew for vehicle and property" position. Cleaner Image leads pure detail. Gladiator leads pure lawn. Power Wash Pro leads pure pressure wash. Advanced Soft Wash is the closest combo player, but their site reads like two services bolted together rather than a unified offer. Tru Wash's structural advantage is the bundle, and the website should be built to tell that story.</p>
+
+  <h2>Top 5 Competitor Profiles</h2>
+
+  <!-- Cleaner Image -->
+  <div class="card" style="border-left-color:#3fb7e6">
+    <div class="phase-num">01</div>
+    <h3>Cleaner Image Auto Detailing</h3>
+    <div class="url-line"><a href="https://www.cleanerimageauto.com/" target="_blank" rel="noopener">cleanerimageauto.com</a></div>
+    <div class="swatch-row">
+      <div class="sw" style="background:#1c6db0" title="Trust blue"></div>
+      <div class="sw" style="background:#ffffff" title="White"></div>
+      <div class="sw" style="background:#0d1b2a" title="Ink"></div>
+      <span class="sw-label">Blue + white + ink. Water-droplet logo.</span>
+    </div>
+    <p class="strength"><b>Strengths:</b> 25+ years of detailing experience. Heavy credential stacking (Angelwax, Dr. Colorchip, IDA). Strong content depth and clean booking flow.</p>
+    <p class="weakness"><b>Weaknesses:</b> Fixed-shop only (not mobile). Detail-only positioning. No lawn or wash crossover. Premium pricing posture excludes value-shoppers.</p>
+    <div class="scoregrid">
+      <div class="scoreitem"><b>9</b>Search</div>
+      <div class="scoreitem"><b>9</b>Reviews</div>
+      <div class="scoreitem"><b>8</b>Design</div>
+      <div class="scoreitem"><b>8</b>Mobile</div>
+      <div class="scoreitem"><b>9</b>Content</div>
+      <div class="scoreitem"><b>8</b>Social Proof</div>
+      <div class="scoreitem"><b>9</b>CTA</div>
+      <div class="scoreitem"><b>8</b>Speed</div>
+    </div>
+    <div class="tags"><span class="tag">Detail Leader</span><span class="tag">Premium</span><span class="tag">Fixed Shop</span></div>
+  </div>
+
+  <!-- Bayou Details -->
+  <div class="card" style="border-left-color:#0b6e8a">
+    <div class="phase-num">02</div>
+    <h3>Bayou Details</h3>
+    <div class="url-line"><a href="https://www.bayoudetails.com/" target="_blank" rel="noopener">bayoudetails.com</a></div>
+    <div class="swatch-row">
+      <div class="sw" style="background:#0b6e8a" title="Teal"></div>
+      <div class="sw" style="background:#1c6db0" title="Blue"></div>
+      <div class="sw" style="background:#f4f4f4" title="Off-white"></div>
+      <span class="sw-label">Teal + blue. Clean modern layout.</span>
+    </div>
+    <p class="strength"><b>Strengths:</b> Published package pricing ($174.99 / $229.99 / $329.99). 100% mobile positioning. Side-by-side comparison vs. drive-through washes.</p>
+    <p class="weakness"><b>Weaknesses:</b> Light testimonials. Detail-only. No lawn or wash. Pricing transparent but high-floor.</p>
+    <div class="scoregrid">
+      <div class="scoreitem"><b>8</b>Search</div>
+      <div class="scoreitem"><b>7</b>Reviews</div>
+      <div class="scoreitem"><b>7</b>Design</div>
+      <div class="scoreitem"><b>7</b>Mobile</div>
+      <div class="scoreitem"><b>8</b>Content</div>
+      <div class="scoreitem"><b>6</b>Social Proof</div>
+      <div class="scoreitem"><b>9</b>CTA</div>
+      <div class="scoreitem"><b>8</b>Speed</div>
+    </div>
+    <div class="tags"><span class="tag">Mobile Detail</span><span class="tag">Package Pricing</span></div>
+  </div>
+
+  <!-- Advanced Soft Wash -->
+  <div class="card" style="border-left-color:#c45d3e">
+    <div class="phase-num">03</div>
+    <h3>Advanced Soft Wash &amp; Detailing</h3>
+    <div class="url-line"><a href="https://www.cleaninghouma.com/" target="_blank" rel="noopener">cleaninghouma.com</a></div>
+    <div class="swatch-row">
+      <div class="sw" style="background:#ffffff" title="White"></div>
+      <div class="sw" style="background:#1a1814" title="Dark nav"></div>
+      <div class="sw" style="background:#c0c0c0" title="Grey"></div>
+      <span class="sw-label">White + dark nav. Functional.</span>
+    </div>
+    <p class="strength"><b>Strengths:</b> Closest direct analog to Tru Wash. Bundles wash + detail with discounts. Service-area map. Articles/tips section for SEO.</p>
+    <p class="weakness"><b>Weaknesses:</b> No lawn care at all. Visually safe, not premium. Testimonial section is thin. Bundle story underplayed.</p>
+    <div class="scoregrid">
+      <div class="scoreitem"><b>7</b>Search</div>
+      <div class="scoreitem"><b>7</b>Reviews</div>
+      <div class="scoreitem"><b>7</b>Design</div>
+      <div class="scoreitem"><b>7</b>Mobile</div>
+      <div class="scoreitem"><b>8</b>Content</div>
+      <div class="scoreitem"><b>6</b>Social Proof</div>
+      <div class="scoreitem"><b>9</b>CTA</div>
+      <div class="scoreitem"><b>7</b>Speed</div>
+    </div>
+    <div class="tags"><span class="tag">Wash + Detail Combo</span><span class="tag">Closest Analog</span></div>
+  </div>
+
+  <!-- Gladiator -->
+  <div class="card" style="border-left-color:#5bae3e">
+    <div class="phase-num">04</div>
+    <h3>Gladiator Inc.</h3>
+    <div class="url-line"><a href="https://www.gladiator-inc.com/" target="_blank" rel="noopener">gladiator-inc.com</a></div>
+    <div class="swatch-row">
+      <div class="sw" style="background:#000000" title="Black"></div>
+      <div class="sw" style="background:#ffffff" title="White"></div>
+      <div class="sw" style="background:#5bae3e" title="Grass green"></div>
+      <span class="sw-label">Black + white logo. Classic.</span>
+    </div>
+    <p class="strength"><b>Strengths:</b> Owner-story page (Matthew LeBlanc, 20+ years). "Meet the Crew" section. Licensed + insured badges. Strong service depth.</p>
+    <p class="weakness"><b>Weaknesses:</b> Lawn-only. No detail. No wash. Visually safe. Reviews section present but light on dated, named testimonials.</p>
+    <div class="scoregrid">
+      <div class="scoreitem"><b>7</b>Search</div>
+      <div class="scoreitem"><b>7</b>Reviews</div>
+      <div class="scoreitem"><b>7</b>Design</div>
+      <div class="scoreitem"><b>7</b>Mobile</div>
+      <div class="scoreitem"><b>8</b>Content</div>
+      <div class="scoreitem"><b>6</b>Social Proof</div>
+      <div class="scoreitem"><b>9</b>CTA</div>
+      <div class="scoreitem"><b>7</b>Speed</div>
+    </div>
+    <div class="tags"><span class="tag">Lawn Leader</span><span class="tag">Owner Story</span></div>
+  </div>
+
+  <!-- Power Wash Pro -->
+  <div class="card" style="border-left-color:#f0851e">
+    <div class="phase-num">05</div>
+    <h3>Power Wash Pro</h3>
+    <div class="url-line"><a href="https://powerwashprola.com/" target="_blank" rel="noopener">powerwashprola.com</a></div>
+    <div class="swatch-row">
+      <div class="sw" style="background:#1c6db0" title="Blue"></div>
+      <div class="sw" style="background:#f0851e" title="Orange"></div>
+      <div class="sw" style="background:#ffffff" title="White"></div>
+      <span class="sw-label">Blue + orange. Bold logo.</span>
+    </div>
+    <p class="strength"><b>Strengths:</b> 30+ named, dated, 5-star reviews, the strongest social proof in market. Family-owned + locally-owned + insured badges. 11+ years.</p>
+    <p class="weakness"><b>Weaknesses:</b> Pressure wash only. No detail. No lawn. Phone not prominent in hero.</p>
+    <div class="scoregrid">
+      <div class="scoreitem"><b>8</b>Search</div>
+      <div class="scoreitem"><b>10</b>Reviews</div>
+      <div class="scoreitem"><b>7</b>Design</div>
+      <div class="scoreitem"><b>7</b>Mobile</div>
+      <div class="scoreitem"><b>8</b>Content</div>
+      <div class="scoreitem"><b>9</b>Social Proof</div>
+      <div class="scoreitem"><b>9</b>CTA</div>
+      <div class="scoreitem"><b>7</b>Speed</div>
+    </div>
+    <div class="tags"><span class="tag">Pressure Wash Leader</span><span class="tag">Best Reviews</span></div>
+  </div>
+
+  <h2>Side-by-Side Scorecard</h2>
+  <table>
+    <thead>
+      <tr><th>Criterion</th><th>Cleaner Image</th><th>Bayou Details</th><th>Adv. Soft Wash</th><th>Gladiator</th><th>Power Wash Pro</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Search visibility</td><td class="score">9</td><td class="score">8</td><td class="score">7</td><td class="score">7</td><td class="score">8</td></tr>
+      <tr><td>Review quality</td><td class="score">9</td><td class="score">7</td><td class="score">7</td><td class="score">7</td><td class="score">10</td></tr>
+      <tr><td>Visual design</td><td class="score">8</td><td class="score">7</td><td class="score">7</td><td class="score">7</td><td class="score">7</td></tr>
+      <tr><td>Mobile responsive</td><td class="score">8</td><td class="score">7</td><td class="score">7</td><td class="score">7</td><td class="score">7</td></tr>
+      <tr><td>Content depth</td><td class="score">9</td><td class="score">8</td><td class="score">8</td><td class="score">8</td><td class="score">8</td></tr>
+      <tr><td>Social proof</td><td class="score">8</td><td class="score">6</td><td class="score">6</td><td class="score">6</td><td class="score">9</td></tr>
+      <tr><td>CTA strategy</td><td class="score">9</td><td class="score">9</td><td class="score">9</td><td class="score">9</td><td class="score">9</td></tr>
+      <tr><td>Page speed feel</td><td class="score">8</td><td class="score">8</td><td class="score">7</td><td class="score">7</td><td class="score">7</td></tr>
+      <tr class="totalrow"><td>Composite</td><td class="score">8.5</td><td class="score">7.5</td><td class="score">7.3</td><td class="score">7.3</td><td class="score">8.1</td></tr>
+    </tbody>
+  </table>
+
+  <h2>SEO Landscape</h2>
+  <div class="twocol">
+    <div class="col">
+      <h4>Owned by competitors</h4>
+      <ul class="tight">
+        <li>"auto detailing houma" (Cleaner Image, Bayou)</li>
+        <li>"mobile car detailing houma" (Bayou)</li>
+        <li>"pressure washing houma" (Power Wash Pro, Adv. Soft Wash)</li>
+        <li>"lawn care houma" (Gladiator, Duplantis)</li>
+        <li>"ceramic coating houma" (Cleaner Image)</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Wide open for Tru Wash</h4>
+      <ul class="tight">
+        <li>"detail and lawn service houma"</li>
+        <li>"mobile detail and pressure wash houma"</li>
+        <li>"houma car detail and yard service"</li>
+        <li>"Terrebonne Parish detailing"</li>
+        <li>"affordable detail houma"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Patterns of the Top 10%</h2>
+
+  <div class="pattern">
+    <span class="n">1.</span><h3>A trust stack above the fold.</h3>
+    <p>Every leader shows credentials within the first viewport. Cleaner Image stacks Angelwax, Dr. Colorchip, and IDA logos. Gladiator shows "Licensed &amp; Insured." Power Wash Pro shows "Family-Owned · Locally-Owned · Insured." Tru Wash should run a 3-badge row directly under the hero: <b>Owner-Operated · Houma-Born · Insured.</b></p>
+  </div>
+
+  <div class="pattern">
+    <span class="n">2.</span><h3>Owner story humanizes the brand.</h3>
+    <p>Gladiator's Matthew LeBlanc page is the strongest example. Cleaner Image's "since 2000" line is a softer version of the same play. Tru Wash should ship a "Meet Tory" panel with portrait and a short story, even if it starts as a placeholder.</p>
+  </div>
+
+  <div class="pattern">
+    <span class="n">3.</span><h3>Named, dated, 5-star testimonials.</h3>
+    <p>Power Wash Pro's 30+ named reviews are the single biggest reason they out-rank similar pressure-wash sites. Tru Wash should embed a 3-up testimonial grid, named with first name + initial, SVG stars, and a date.</p>
+  </div>
+
+  <div class="pattern">
+    <span class="n">4.</span><h3>Starting-at price floors.</h3>
+    <p>Bayou Details publishes $174.99 / $229.99 / $329.99. This eliminates the "are they expensive?" hesitation and pre-qualifies leads. Tru Wash should show a soft "Starting at $X" on every service card.</p>
+  </div>
+
+  <div class="pattern">
+    <span class="n">5.</span><h3>The bundle nobody owns.</h3>
+    <p>Advanced Soft Wash hints at multi-service discounts but doesn't lead with it. Tru Wash's structural edge is one trusted crew for detail + lawn + pressure wash. The site should put a "Bundle and save" panel front and center. This is the wedge.</p>
+  </div>
+
+  <h2>Recommended Design Direction</h2>
+
+  <table>
+    <thead><tr><th>Decision</th><th>Recommendation</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Palette</td><td>Bayou Navy + Spring Grass + Water Blue</td><td>Carries the dual-track story</td></tr>
+      <tr><td>Typography</td><td>Bricolage Grotesque + Inter</td><td>Modern but warm, differentiates from competitors' defaults</td></tr>
+      <tr><td>Hero</td><td>Scroll-triggered reveal + parallax</td><td>No competitor does this</td></tr>
+      <tr><td>Trust stack</td><td>3 badges under hero</td><td>Universal winning pattern</td></tr>
+      <tr><td>Pricing</td><td>Starting-at floors per service</td><td>Pre-qualifies leads</td></tr>
+      <tr><td>Testimonials</td><td>Named, dated, 5-star, 3-up grid</td><td>Power Wash Pro's strongest move</td></tr>
+      <tr><td>Bundle pitch</td><td>Dedicated panel, side-by-side savings</td><td>Owns a wedge nobody else holds</td></tr>
+      <tr><td>Owner story</td><td>"Meet Tory" with portrait</td><td>Gladiator's strongest move</td></tr>
+      <tr><td>Mobile</td><td>16px form inputs, 44px tap targets, real CTA inside drawer</td><td>Beats every Houma competitor on default</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    Confidential. Prepared for Tru Wash Detail and Lawn Care, LLC. Not for distribution.
+    <div class="credit">
+      Created by <a href="https://www.chatbotboy.ai/" target="_blank" rel="noopener">Chatbot Boy AI</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

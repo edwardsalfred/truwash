@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Tru Wash Detail and Lawn Care">
+  <defs>
+    <linearGradient id="dropL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7ad2f3"/>
+      <stop offset="1" stop-color="#3fb7e6"/>
+    </linearGradient>
+    <linearGradient id="bladeL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7ac559"/>
+      <stop offset="1" stop-color="#3e8b27"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8,8)">
+    <circle cx="40" cy="40" r="40" fill="#F6F4EF"/>
+    <path d="M30 18 C 22 30, 16 38, 16 48 C 16 56, 22 62, 30 62 C 38 62, 44 56, 44 48 C 44 38, 38 30, 30 18 Z" fill="url(#dropL)"/>
+    <ellipse cx="26" cy="34" rx="3" ry="6" fill="#fff" opacity=".4"/>
+    <path d="M52 64 C 52 50, 56 38, 62 26 C 62 38, 60 50, 56 64 Z" fill="url(#bladeL)"/>
+    <path d="M46 64 C 46 54, 48 46, 52 38 C 52 46, 51 54, 50 64 Z" fill="url(#bladeL)" opacity=".85"/>
+  </g>
+  <g transform="translate(108,0)" font-family="'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif" font-weight="800">
+    <text x="0" y="50" font-size="36" fill="#F6F4EF" letter-spacing="-0.5">TRU WASH</text>
+    <text x="2" y="84" font-size="18" fill="#9FB0BC" letter-spacing="2" font-weight="600">DETAIL · LAWN · WASH</text>
+  </g>
+</svg>

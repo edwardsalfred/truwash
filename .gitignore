@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (if anything's added later)
+node_modules/
+npm-debug.log*
+
+# Build / test ephemera
+.playwright-mcp/
+*.log
+
+# Downloaded skill folders (auxiliary, not project content)
+3D-Animation-Creator-*/
+Image-Generator-*/
+
+# Working-copy orphan screenshots not used by the site
+afterlawn.png
+beforelawn.png
