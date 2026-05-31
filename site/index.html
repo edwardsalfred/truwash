@@ -89,8 +89,12 @@
 <!-- =========== HERO (scroll-driven video background) =========== -->
 <div class="hero-scroll" id="top" data-frames="121" data-frame-pattern="/assets/hero-frames/frame_{n}.jpg" data-poster="/assets/hero-poster.jpg">
   <header class="hero">
-    <!-- Frame canvas (desktop + non-reduced motion). On mobile / reduced motion, poster image is shown via CSS background. -->
+    <!-- Desktop + non-reduced motion: canvas painted from extracted frames driven by scroll position.
+         Mobile (and iOS Safari): autoplay-muted-playsinline video element loops the same animation. -->
     <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/hero-poster.jpg" aria-hidden="true">
+      <source src="/assets/hero-video.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-copy">

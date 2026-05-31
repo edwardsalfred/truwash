@@ -269,6 +269,18 @@ p{margin:0 0 1em}
   background-size:cover;
   background-position:center;
 }
+/* HTML5 video for mobile (and iOS Safari, where canvas-driven scroll is disabled).
+   Hidden on desktop. Shown at the same position as the canvas. */
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  display:none;
+  background:var(--bayou-deep);
+}
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -1038,9 +1050,12 @@ section .container{max-width:var(--max);margin:0 auto}
   .hero{position:relative;height:auto;min-height:100vh}
   .hero-overlay{
     background:
-      linear-gradient(180deg, rgba(11,42,58,.78) 0%, rgba(11,42,58,.4) 30%, rgba(11,42,58,.3) 60%, rgba(6,32,44,.92) 100%);
+      linear-gradient(180deg, rgba(11,42,58,.65) 0%, rgba(11,42,58,.3) 35%, rgba(11,42,58,.25) 65%, rgba(6,32,44,.92) 100%);
   }
   .hero-scroll-hint{display:none}
+  /* Show the video, hide the canvas on mobile + reduced motion */
+  .hero-canvas{display:none}
+  .hero-video{display:block}
 }
 
 @media (max-width:720px){
@@ -1050,21 +1065,50 @@ section .container{max-width:var(--max);margin:0 auto}
   .trust-inner{grid-template-columns:1fr;gap:8px}
   .trust-badge{justify-content:flex-start;text-align:left;padding:12px}
 
-  /* Mobile nav drawer */
+  /* Mobile nav drawer.
+     iOS Safari has historical issues with nested position:fixed inside
+     elements that use backdrop-filter (which .nav.scrolled does). To avoid
+     that, we strip backdrop-filter from the nav whenever the drawer is open,
+     and we use translate3d (forces a fresh GPU layer + viewport-relative
+     positioning) instead of plain translateY. */
   .nav-toggle{display:block}
   .nav-links{
     position:fixed;
-    top:0;left:0;right:0;bottom:0;
-    background:var(--bayou);
-    padding:80px 28px 36px;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    height:100dvh;                          /* iOS dynamic viewport */
+    background-color:#0B2A3A!important;     /* hard-coded fallback (var lookup can fail in some Safari edge cases) */
+    background:#0B2A3A!important;
+    padding:90px 28px 36px;
     flex-direction:column;
     align-items:stretch;
     gap:0;
-    transform:translateY(-100%);
-    transition:transform .35s cubic-bezier(.2,.7,.2,1);
+    -webkit-transform:translate3d(0,-100%,0);
+    transform:translate3d(0,-100%,0);
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s linear .35s;
+    visibility:hidden;
+    pointer-events:none;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
     z-index:99;
   }
-  .nav.open .nav-links{transform:translateY(0)}
+  .nav.open .nav-links{
+    -webkit-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+    visibility:visible;
+    pointer-events:auto;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s linear 0s;
+  }
+  /* When the drawer is open, force the nav itself to a solid navy and strip
+     any backdrop-filter so iOS Safari doesn't break the child position:fixed. */
+  .nav.open{
+    background:#0B2A3A!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    box-shadow:none!important;
+  }
   .nav-links li{border-bottom:1px solid rgba(246,244,239,.1)}
   .nav-links li a:not(.btn){
     color:var(--paper)!important;
